@@ -1,0 +1,21 @@
+{
+  "name": "selenium",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@types/chai": "4.1.4",
+    "@types/mocha": "5.2.5",
+    "@types/node": "^10.7.1",
+    "chai": "4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "chai-xml": "^0.3.2",
+    "mocha": "5.2.0",
+    "mocha-junit-reporter": "^1.18.0",
+    "mocha-multi-reporters": "^1.1.7",
+    "test-console": "^1.1.0",
+    "typescript": "3.0.1"
+  },
+  "author": "",
+  "license": "ISC"
+}
