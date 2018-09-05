@@ -13,8 +13,8 @@ jobs:
   - script: 'npm install && npm install -g mocha' 
     displayName: 'Command Line Script'
 
-  - bash: ./distribute_tests.sh
-    displayName: 'Bash Script'
+  - powershell: ./DistributeTests.ps1
+    displayName: 'Script to distribute tests'
 
   - task: PublishTestResults@2
     displayName: 'Publish Test Results junitReports/test-*.xml'
