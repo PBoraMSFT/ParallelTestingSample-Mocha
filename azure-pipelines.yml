@@ -1,0 +1,24 @@
+# Mocha test sample
+# Sample that demonstrates how to leverage the parallel jobs capability of Azure Pipelines to run mocha tests in parallel.
+# Parallelizing tests helps in reducing the time spent in testing and can speed up the pipelines significantly.
+
+jobs:
+
+- job: 'ParallelTesting'
+  pool: 'Hosted Ubuntu 1804'
+  strategy:
+    parallel: 3
+
+  steps:
+  - script: 'npm install && npm install -g mocha' 
+    displayName: 'Command Line Script'
+
+  - bash: ./ 'distribute_tests.sh' 
+    displayName: 'Bash Script'
+
+  - task: PublishTestResults@2
+    displayName: 'Publish Test Results junitReports/test-*.xml'
+    inputs:
+      testResultsFiles: 'junitReports/test-*.xml'
+
+      mergeTestResults: true
