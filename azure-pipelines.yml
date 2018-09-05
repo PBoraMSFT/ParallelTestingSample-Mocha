@@ -5,7 +5,7 @@
 jobs:
 
 - job: 'ParallelTesting'
-  pool: 'Hosted Ubuntu 1804'
+  pool: 'Hosted Linux Preview'
   strategy:
     parallel: 3
 
