@@ -13,7 +13,7 @@ jobs:
   - script: 'npm install && npm install -g mocha' 
     displayName: 'Command Line Script'
 
-  - powershell: ./DistributeTests.ps1
+  - bash: . 'distribute_tests.sh'
     displayName: 'Script to distribute tests'
 
   - task: PublishTestResults@2
