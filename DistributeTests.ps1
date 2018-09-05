@@ -30,7 +30,7 @@ if (!$agentNumber -or $agentNumber -eq 0) {
 For ($i = $agentNumber; $i -le $testCount; ) {
     $file = $tests[$i - 1]
     Write-Host "Executing $file"
-    & ".\node_modules\.bin\mocha" $($file.FullName) --reporter mocha-multi-reporters --reporter-options configFile=config.json
+    & ".\node_modules\.bin\mocha" $($file.FullName) --reporter mocha-multi-reporters --reporter-options configFile=config.json # essentially we are running mocha test1spec.js, mocha test3spec.js and so on
     cp ".\testresults\*.xml" ".\junitReports\test-results$i.xml" # copy test reports to publish them after the test execution is completed
     $i = $i + $totalAgents
 }
